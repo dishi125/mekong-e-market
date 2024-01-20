@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Home</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#show_records").hide();
+            var socket = io();
+
+            // socket.on('join',function(name){
+            // socket.emit('join',name);
+            //});
+
+            socket.on('announcements', function(data) {
+                console.log('Got announcement:', data.message);
+            });
+            // var data =['jagu',6666666666,'jagrutiDemo@gmail.com',123];
+            // var data =[2,87.100,123.110];
+            var id={userId:1};
+            var data={
+                name:"test5",
+                contactNo:8880088888,
+                email:"test5.vasundhara@gmail.com",
+                password:123
+            };
+            // socket.emit('registration',data);
+
+            /* var data={
+                 userId:3,
+                 latitude:11.3069,
+                 longitude:10.20659,
+
+             };*/
+            // json_encode();
+            /*var data={
+                "name":"jagukantariya",
+                "contactNo":5555555555,
+                "email":"jk@gmail.com",
+                "password":123
+            };*/
+            // socket.emit('insertLocation',data);
+            // socket.emit('getAllusersLocation');
+            //  socket.emit('editLocationByid',data);
+            //  socket.emit('getLocationById',id);
+            //  socket.emit('reg',arr);
+        });
+
+    </script>
+</head>
+<body>
+<!--style="width: inherit;height: inherit;"-->
+
+<h1>welcome to mekong-e-market</h1>
+</body>
+</html>
